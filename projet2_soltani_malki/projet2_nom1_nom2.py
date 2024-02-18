@@ -35,9 +35,10 @@ position_joueur = [5, 5]
 position_precedente_joueur = [0, 4]
 sortie = [0, 4]
 
+toto = "exemple"
 
 def il_y_a_un_mur ( x : int , y : int ) -> bool :
-    #on recupere la valeur a la position x,y du tableau et on verifie si il y a un 1.
+    # on recupere la valeur a la position x,y du tableau et on verifie si il y a un 1.
     return murs[x][y] == 1
 
 def il_y_a_un_ennemi(x: int, y: int) -> bool :
