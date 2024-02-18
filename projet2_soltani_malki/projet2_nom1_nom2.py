@@ -35,7 +35,7 @@ position_joueur = [5, 5]
 position_precedente_joueur = [0, 4]
 sortie = [0, 4]
 
-toto = "exemple"
+toto = "exemple2"
 
 def il_y_a_un_mur ( x : int , y : int ) -> bool :
     # on recupere la valeur a la position x,y du tableau et on verifie si il y a un 1.
