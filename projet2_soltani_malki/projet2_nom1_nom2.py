@@ -97,6 +97,25 @@ def jouer() -> None:
     y = position_joueur[1]
     deplacer_joueur(x, y)
 
+def sortir () -> None :
+    print("le jeu es terminé")
+
+
+def deplacement () -> None :
+    global position_joueur
+    #on defini x et y afin de pouvoir les utuliser dans la condition .
+    x = position_joueur[0]
+    y = position_joueur[1]
+    # on donne à direction la direction entrée par l'utilisateur
+    direction = input("Dans quelle direction voulez-vous aller?")
+    # si l'utilisateur a rentré Nord alors on rentre dans le if
+    if(direction == "Nord"):
+        print("le joueur va au nord")
+        # comme la direction choisie est le nord, on fait y = -1
+        y -= 1
+        # on ajoute une 2ème condition pour savoir si on ne sort pas du tableau
+        if(y >= 0):
+            deplacer_joueur(x, y)
 
 jouer()
 
