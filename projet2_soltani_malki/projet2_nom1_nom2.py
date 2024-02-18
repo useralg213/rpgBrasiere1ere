@@ -113,9 +113,18 @@ def deplacement () -> None :
         print("le joueur va au nord")
         # comme la direction choisie est le nord, on fait y = -1
         y -= 1
-        # on ajoute une 2ème condition pour savoir si on ne sort pas du tableau
-        if(y >= 0):
+        #condition pour savoir si on ne sort pas du tableau et que l'on ne se trouve pas a la sortie.
+        if(y >= 0) and (sortie != [x, y]) :
             deplacer_joueur(x, y)
+        elif (sortie == [x, y]) :
+            sortir()
+
+
+
+
+
+
+
 
 jouer()
 
