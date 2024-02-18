@@ -116,8 +116,11 @@ def deplacement () -> None :
         #condition pour savoir si on ne sort pas du tableau et que l'on ne se trouve pas a la sortie.
         if(y >= 0) and (sortie != [x, y]) :
             deplacer_joueur(x, y)
+            #est ce que x et y sont = a la sortie
         elif (sortie == [x, y]) :
             sortir()
+        elif (y<0) :
+            deplacement()
 
 
 
