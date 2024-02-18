@@ -128,7 +128,7 @@ def deplacement () -> None :
                 # comme la direction choisie est le Sud, on fait y = -1
                 y += 1
                 # condition pour savoir si on ne sort pas du tableau et que l'on ne se trouve pas a la sortie.
-                if (y<len(murs)) and (sortie != [x, y]):
+                if (y<=len(murs)) and (sortie != [x, y]):
                     deplacer_joueur(x, y)
                     # est ce que x et y sont = a la sortie
                 elif (sortie == [x, y]):
@@ -156,7 +156,7 @@ def deplacement () -> None :
                     # comme la direction choisie est l'Est, on fait x = -1
                     x += 1
                     # condition pour savoir si on ne sort pas du tableau et que l'on ne se trouve pas a la sortie.
-                    if (x > len(murs)) and (sortie != [x, y]):
+                    if (x <= len(murs)) and (sortie != [x, y]):
                         deplacer_joueur(x, y)
                         # est ce que x et y sont = a la sortie
                     elif (sortie == [x, y]):
