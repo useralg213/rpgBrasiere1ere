@@ -71,6 +71,12 @@ def arriver_case() -> None :
 
     if (il_y_a_un_mur(xPositionJoueur, yPositionJoueur )) :
         print("il y a un mur")
+        detruireMur = input("souhaitez-vous détruire le mur ?")
+        if (detruireMur == "Oui") :
+            detruire_mur(xPositionJoueur, yPositionJoueur)
+        else:
+            reculer()
+        deplacement()
 
     if (il_y_a_un_ennemi(xPositionJoueur, yPositionJoueur)) :
         print("il y a un ennemi")
@@ -96,7 +102,7 @@ def jouer() -> None:
     x = position_joueur[0]
     y = position_joueur[1]
     deplacer_joueur(x, y)
-
+    deplacement()
 def sortir () -> None :
     print("le jeu es terminé")
 
