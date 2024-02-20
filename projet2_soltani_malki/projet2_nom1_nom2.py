@@ -168,8 +168,21 @@ def deplacement () -> None :
                 deplacement()
     print("fin de la fonction déplacement")
 
+def reculer () -> None :
+    global position_precedente_joueur
+    global position_joueur
+    position_precedente_joueur = position_joueur
+
+def detruire_mur ( x : int , y : int ) -> None :
+    global murs
+    murs[x][y] = 0
+
+
+
+
+
 jouer()
-deplacement()
+
 
 
 
