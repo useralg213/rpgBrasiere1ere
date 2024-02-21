@@ -115,6 +115,10 @@ def jouer() -> None:
     deplacer_joueur(x, y)
     deplacement()
 def sortir () -> None :
+    global ennemis_vaincus
+    global tresors_collectes
+    print("le nombre d'ennemi(s) vaincu(s) est de :", ennemis_vaincus)
+    print("le nombre de tresor(s) collecté(s) est de :", tresors_collectes)
     print("le jeu es terminé")
 
 
