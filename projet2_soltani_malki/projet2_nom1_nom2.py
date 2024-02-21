@@ -82,8 +82,11 @@ def arriver_case() -> None :
     if (il_y_a_un_ennemi(xPositionJoueur, yPositionJoueur)) :
         print("il y a un ennemi")
         input("souhaitez-vous affronter l'ennemi ?")
-
-
+        reponse = input("souhaitez-vous affronter l'ennemi ?")
+        if (reponse == "Oui") :
+            affronter_ennemi(xPositionJoueur, yPositionJoueur)
+            if(affronter_ennemi(xPositionJoueur, yPositionJoueur) == False ) :
+                reculer()
     if (il_y_a_un_tresor(xPositionJoueur, yPositionJoueur)) :
         input("souhaitez-vous ramasser le trésor ?")
         reponse = input("souhaitez-vous ramasser le trésor ?")
@@ -191,6 +194,7 @@ def detruire_mur ( x : int , y : int ) -> None :
     global murs
     #on enleve le mur donc les coordonées doivent etre egales à 0 .
     murs[x][y] = 0
+    print("vous avez detrui un mur !")
 
 def ramasser_tresor ( x : int , y : int ) -> None :
     global tresors_collectes
