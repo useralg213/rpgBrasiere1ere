@@ -38,7 +38,8 @@ tresors = [[0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0] , \
 position_joueur = [5, 5]
 position_precedente_joueur = [0, 4]
 sortie = [0, 4]
-
+tresors_collectes = 0
+ennemis_vaincus = 0
 def il_y_a_un_mur ( x : int , y : int ) -> bool :
     # on recupere la valeur a la position x,y du tableau et on verifie si il y a un 1.
     return murs[x][y] == 1
@@ -80,9 +81,16 @@ def arriver_case() -> None :
 
     if (il_y_a_un_ennemi(xPositionJoueur, yPositionJoueur)) :
         print("il y a un ennemi")
+        input("souhaitez-vous affronter l'ennemi ?")
+
 
     if (il_y_a_un_tresor(xPositionJoueur, yPositionJoueur)) :
-        print("il y a un tresor")
+        input("souhaitez-vous ramasser le trésor ?")
+        reponse = input("souhaitez-vous ramasser le trésor ?")
+        if (reponse == "Oui") :
+            ramasser_tresor(xPositionJoueur, yPositionJoueur)
+        deplacement()
+
 
 def jouer() -> None:
     """
@@ -181,7 +189,26 @@ def reculer () -> None :
 
 def detruire_mur ( x : int , y : int ) -> None :
     global murs
+    #on enleve le mur donc les coordonées doivent etre egales à 0 .
     murs[x][y] = 0
+
+def ramasser_tresor ( x : int , y : int ) -> None :
+    global tresors_collectes
+    tresors_collectes += 1
+    print("vous venez d'acquerir un nouveau tresor : Bravo! ")
+
+def affronter_ennemi ( x : int , y : int ) -> bool :
+    global ennemis_vaincus
+    randint(0,1)
+    #Pour savoir si il y a un ennemi.
+    vaincreLennemi = randint(0,1)
+    if (vaincreLennemi == 1) :
+        ennemis[x][y] = 0
+        ennemis_vaincus += 1
+        return True
+    else:
+        return False
+
 
 
 
