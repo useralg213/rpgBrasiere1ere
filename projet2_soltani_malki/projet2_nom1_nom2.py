@@ -113,7 +113,7 @@ def jouer() -> None:
     y = position_joueur[1]
     deplacer_joueur(x, y)
     #pour tester si le comportement du jeux si il y a un mur a l'est
-    tresors[x+1][y] = 1
+    sortie = [x+1][y]
     deplacement()
 def sortir () -> None :
     global ennemis_vaincus
