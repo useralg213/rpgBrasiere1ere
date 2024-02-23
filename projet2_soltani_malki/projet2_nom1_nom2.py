@@ -192,7 +192,10 @@ def deplacement () -> None :
 def reculer () -> None :
     global position_precedente_joueur
     global position_joueur
+    print("vous allez reculer voila l'ancienne position du joueur:",position_joueur)
     position_precedente_joueur = position_joueur
+    print("vous avez reculer voici votre position actuel :", position_joueur)
+
 
 def detruire_mur ( x : int , y : int ) -> None :
     global murs
