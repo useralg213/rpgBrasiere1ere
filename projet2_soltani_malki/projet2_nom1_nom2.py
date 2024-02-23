@@ -85,6 +85,8 @@ def arriver_case() -> None :
         if (reponse == "Oui") :
             if(affronter_ennemi(xPositionJoueur, yPositionJoueur) == False ) :
                 reculer()
+        else:
+            reculer()
     if (il_y_a_un_tresor(xPositionJoueur, yPositionJoueur)) :
         input("souhaitez-vous ramasser le trésor ?")
         reponse = input("souhaitez-vous ramasser le trésor ?")
@@ -193,7 +195,7 @@ def reculer () -> None :
     global position_precedente_joueur
     global position_joueur
     print("vous allez reculer voila l'ancienne position du joueur:",position_joueur)
-    position_precedente_joueur = position_joueur
+    position_joueur = position_precedente_joueur
     print("vous avez reculer voici votre position actuel :", position_joueur)
 
 
