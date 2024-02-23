@@ -81,7 +81,6 @@ def arriver_case() -> None :
 
     if (il_y_a_un_ennemi(xPositionJoueur, yPositionJoueur)) :
         print("il y a un ennemi")
-        input("souhaitez-vous affronter l'ennemi ?")
         reponse = input("souhaitez-vous affronter l'ennemi ?")
         if (reponse == "Oui") :
             affronter_ennemi(xPositionJoueur, yPositionJoueur)
