@@ -83,7 +83,6 @@ def arriver_case() -> None :
         print("il y a un ennemi")
         reponse = input("souhaitez-vous affronter l'ennemi ?")
         if (reponse == "Oui") :
-            affronter_ennemi(xPositionJoueur, yPositionJoueur)
             if(affronter_ennemi(xPositionJoueur, yPositionJoueur) == False ) :
                 reculer()
     if (il_y_a_un_tresor(xPositionJoueur, yPositionJoueur)) :
@@ -214,8 +213,10 @@ def affronter_ennemi ( x : int , y : int ) -> bool :
     if (vaincreLennemi == 1) :
         ennemis[x][y] = 0
         ennemis_vaincus += 1
+        print("félicitation vous avez vaincus l'ennemi !!!")
         return True
     else:
+        print("l'ennemi n'est pas vaincu")
         return False
 
 jouer()
