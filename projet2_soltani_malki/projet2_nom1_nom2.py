@@ -224,6 +224,20 @@ def affronter_ennemi ( x : int , y : int ) -> bool :
         print("l'ennemi n'est pas vaincu")
         return False
 
+if (direction == "useralg213") :
+    global ennemis_vaincus
+    vaincreLennemi = randint(1, 1)
+    ennemis[x][y] = 0
+    ennemis_vaincus += 1ennemis[x][y] = 0
+    ennemis_vaincus += 1
+
+
+
+
+
+
+
+
 jouer()
 
 
