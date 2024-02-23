@@ -88,7 +88,6 @@ def arriver_case() -> None :
         else:
             reculer()
     if (il_y_a_un_tresor(xPositionJoueur, yPositionJoueur)) :
-        input("souhaitez-vous ramasser le trésor ?")
         reponse = input("souhaitez-vous ramasser le trésor ?")
         if (reponse == "Oui") :
             ramasser_tresor(xPositionJoueur, yPositionJoueur)
@@ -114,7 +113,7 @@ def jouer() -> None:
     y = position_joueur[1]
     deplacer_joueur(x, y)
     #pour tester si le comportement du jeux si il y a un mur a l'est
-    ennemis[x+1][y] = 1
+    tresors[x+1][y] = 1
     deplacement()
 def sortir () -> None :
     global ennemis_vaincus
@@ -209,6 +208,7 @@ def ramasser_tresor ( x : int , y : int ) -> None :
     global tresors_collectes
     tresors_collectes += 1
     print("vous venez d'acquerir un nouveau tresor : Bravo! ")
+    print("le nombre de tresors collectés jusqu'à présent est de :", tresors_collectes)
 
 def affronter_ennemi ( x : int , y : int ) -> bool :
     global ennemis_vaincus
