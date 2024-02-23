@@ -113,6 +113,8 @@ def jouer() -> None:
     x = position_joueur[0]
     y = position_joueur[1]
     deplacer_joueur(x, y)
+    #pour tester si le comportement du jeux si il y a un mur a l'est
+    ennemis[x+1][y] = 1
     deplacement()
 def sortir () -> None :
     global ennemis_vaincus
@@ -174,18 +176,18 @@ def deplacement () -> None :
         else :
             deplacement()
 
-        if (direction == "Est"):
-            print("le joueur va au Est")
-            # comme la direction choisie est l'Est, on fait x = -1
-            x += 1
-            # condition pour savoir si on ne sort pas du tableau et que l'on ne se trouve pas a la sortie.
-            if (x <= len(murs)) and (sortie != [x, y]):
-                deplacer_joueur(x, y)
-                # est ce que x et y sont = a la sortie
-            elif (sortie == [x, y]):
-                sortir()
+    if (direction == "Est"):
+        print("le joueur va à  Est")
+        # comme la direction choisie est l'Est, on fait x = -1
+        x += 1
+        # condition pour savoir si on ne sort pas du tableau et que l'on ne se trouve pas a la sortie.
+        if (x <= len(murs)) and (sortie != [x, y]):
+            deplacer_joueur(x, y)
+            # est ce que x et y sont = a la sortie
+        elif (sortie == [x, y]):
+            sortir()
 
-            else:
+        else:
                 deplacement()
     print("fin de la fonction déplacement")
 
@@ -216,11 +218,6 @@ def affronter_ennemi ( x : int , y : int ) -> bool :
         return True
     else:
         return False
-
-
-
-
-
 
 jouer()
 
