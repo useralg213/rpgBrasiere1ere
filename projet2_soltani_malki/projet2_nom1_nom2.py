@@ -60,23 +60,73 @@ dialogue_case_tresor = ["phrase case tresor 1",
                       "phrase case tresor 4",
                       "phrase case vide tresor 5"]
 def il_y_a_un_mur ( x : int , y : int ) -> bool :
+    """
+        Description :
+        --------- ----
+        Cette fonction est la fonction principale de votre RPG .
+        Parametres :
+        ------------
+        Retours :
+        ---------
+        ( None )
+        """
     # on recupere la valeur a la position x,y du tableau et on verifie si il y a un 1.
     return murs[x][y] == 1
 
 
 def il_y_a_un_ennemi(x: int, y: int) -> bool :
+    """
+        Description :
+        --------- ----
+        Cette fonction est la fonction principale de votre RPG .
+        Parametres :
+        ------------
+        Retours :
+        ---------
+        ( None )
+        """
     return ennemis[x][y] == 1
 
 
 def il_y_a_un_tresor(x: int, y: int ) -> bool :
+    """
+        Description :
+        --------- ----
+        Cette fonction est la fonction principale de votre RPG .
+        Parametres :
+        ------------
+        Retours :
+        ---------
+        ( None )
+        """
     return tresors[x][y] == 1
 
 
 def obtenir_position_joueur() -> List[int] :
+    """
+        Description :
+        --------- ----
+        Cette fonction est la fonction principale de votre RPG .
+        Parametres :
+        ------------
+        Retours :
+        ---------
+        ( None )
+        """
     return position_joueur
 
 
 def deplacer_joueur ( x : int , y : int ) -> None :
+    """
+        Description :
+        --------- ----
+        Cette fonction est la fonction principale de votre RPG .
+        Parametres :
+        ------------
+        Retours :
+        ---------
+        ( None )
+        """
     global position_joueur
     global position_precedente_joueur
     position_precedente_joueur = position_joueur
@@ -85,6 +135,16 @@ def deplacer_joueur ( x : int , y : int ) -> None :
 
 
 def arriver_case() -> None :
+    """
+        Description :
+        --------- ----
+        Cette fonction est la fonction principale de votre RPG .
+        Parametres :
+        ------------
+        Retours :
+        ---------
+        ( None )
+        """
     global position_joueur
     global murs
     global ennemis
@@ -100,6 +160,7 @@ def arriver_case() -> None :
             detruire_mur(xPositionJoueur, yPositionJoueur)
         else:
             reculer()
+            pygame_min.afficher_jeu(murs, ennemis, tresors, position_joueur)
         deplacement()
 
     if (il_y_a_un_ennemi(xPositionJoueur, yPositionJoueur)) :
@@ -108,8 +169,10 @@ def arriver_case() -> None :
         if (reponse == "Oui") :
             if(affronter_ennemi(xPositionJoueur, yPositionJoueur) == False ) :
                 reculer()
+                pygame_min.afficher_jeu(murs, ennemis, tresors, position_joueur)
         else:
             reculer()
+            pygame_min.afficher_jeu(murs, ennemis, tresors, position_joueur)
     if (il_y_a_un_tresor(xPositionJoueur, yPositionJoueur)) :
         reponse = input("souhaitez-vous ramasser le trésor ?")
         if (reponse == "Oui") :
@@ -142,6 +205,16 @@ def jouer() -> None:
         finDeplacement = deplacement()
     pygame_min.quitter_jeu()
 def sortir () -> None :
+    """
+        Description :
+        --------- ----
+        Cette fonction est la fonction principale de votre RPG .
+        Parametres :
+        ------------
+        Retours :
+        ---------
+        ( None )
+        """
     global ennemis_vaincus
     global tresors_collectes
     print("le nombre d'ennemi(s) vaincu(s) est de :", ennemis_vaincus)
@@ -232,26 +305,65 @@ def deplacement () -> bool :
 
 
 def reculer () -> None :
+    """
+    Description :
+    --------- ----
+    Cette fonction est la fonction principale de votre RPG .
+    Parametres :
+    ------------
+    Retours :
+    ---------
+    ( None )
+    """
     global position_precedente_joueur
     global position_joueur
-    print("vous allez reculer voila l'ancienne position du joueur:",position_joueur)
     position_joueur = position_precedente_joueur
-    print("vous avez reculer voici votre position actuel :", position_joueur)
+
 
 
 def detruire_mur ( x : int , y : int ) -> None :
+    """
+        Description :
+        --------- ----
+        Cette fonction est la fonction principale de votre RPG .
+        Parametres :
+        ------------
+        Retours :
+        ---------
+        ( None )
+        """
     global murs
     #on enleve le mur donc les coordonées doivent etre egales à 0 .
     murs[x][y] = 0
     print("vous avez detrui un mur !")
 
-def ramasser_tresor ( x : int , y : int ) -> None :
+def ramasser_tresor ( x : int , y : int ) -> None :"""
+    Description :
+    --------- ----
+    Cette fonction est la fonction principale de votre RPG .
+    Parametres :
+    ------------
+    Retours :
+    ---------
+    ( None )
+    """
+
     global tresors_collectes
     tresors_collectes += 1
     print("vous venez d'acquerir un nouveau tresor : Bravo! ")
     print("le nombre de tresors collectés jusqu'à présent est de :", tresors_collectes)
 
 def affronter_ennemi ( x : int , y : int ) -> bool :
+    """
+        Description :
+        --------- ----
+        Cette fonction est la fonction principale de votre RPG .
+        Parametres :
+        ------------
+        Retours :
+        ---------
+        ( bool )
+        """
     global ennemis_vaincus
     global ennemis
     #Pour savoir si il y a un ennemi.
@@ -269,6 +381,16 @@ def affronter_ennemi ( x : int , y : int ) -> bool :
 
 
 def tueToutLesEnnemis()-> None :
+    """
+        Description :
+        --------- ----
+        Cette fonction est la fonction principale de votre RPG .
+        Parametres :
+        ------------
+        Retours :
+        ---------
+        ( None )
+        """
     global ennemis_vaincus
     global ennemis
     #stock colonne dans ennemis.
@@ -282,8 +404,22 @@ def tueToutLesEnnemis()-> None :
     print("félicitation,vous avez vaincu tout les ennemis !!!")
 
 def afficher_histoire() -> None  :
+    """
+        Description :
+        --------- ----
+        Cette fonction est la fonction principale de votre RPG .
+        Parametres :
+        ------------
+        Retours :
+        ---------
+        ( None )
+        """
     print("")
 
+def phraseTireeAuSort(categorie:int)-> str
+    #si la categorie = 1 alors on a une phrase de type dialogue case vide .
+    if (categorie == 1) :
+        categorie
 
 
 
