@@ -347,11 +347,10 @@ def ramasser_tresor ( x : int , y : int ) -> None :"""
     ---------
     ( None )
     """
-
-    global tresors_collectes
-    tresors_collectes += 1
-    print("vous venez d'acquerir un nouveau tresor : Bravo! ")
-    print("le nombre de tresors collectés jusqu'à présent est de :", tresors_collectes)
+global tresors_collectes
+tresors_collectes += 1
+print("vous venez d'acquerir un nouveau tresor : Bravo! ")
+print("le nombre de tresors collectés jusqu'à présent est de :", tresors_collectes)
 
 def affronter_ennemi ( x : int , y : int ) -> bool :
     """
@@ -416,11 +415,11 @@ def afficher_histoire() -> None  :
         """
     print("")
 
+
 def phraseTireeAuSort(categorie:int)-> str
     #si la categorie = 1 alors on a une phrase de type dialogue case vide .
     if (categorie == 1) :
         categorie
-
 
 
 
