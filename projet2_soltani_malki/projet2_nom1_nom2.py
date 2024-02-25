@@ -36,11 +36,29 @@ tresors = [[0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0] , \
 [0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 1 , 0] , \
 [0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0]]
 
+
+
 position_joueur = [5, 5]
 position_precedente_joueur = [0, 4]
 sortie = [0, 4]
 tresors_collectes = 0
 ennemis_vaincus = 0
+
+dialogue_case_vide = ["phrase case vide 1",
+                      "phrase case vide 2",
+                      "phrase case vide 3",
+                      "phrase case vide 4",
+                      "phrase case vide 5"]
+dialogue_case_ennemi = ["phrase case ennemi 1",
+                      "phrase case ennemi 2",
+                      "phrase case ennemi 3",
+                      "phrase case ennemi 4",
+                      "phrase case ennemi 5"]
+dialogue_case_tresor = ["phrase case tresor 1",
+                      "phrase case tresor 2",
+                      "phrase case tresor 3",
+                      "phrase case tresor 4",
+                      "phrase case vide tresor 5"]
 def il_y_a_un_mur ( x : int , y : int ) -> bool :
     # on recupere la valeur a la position x,y du tableau et on verifie si il y a un 1.
     return murs[x][y] == 1
@@ -119,6 +137,7 @@ def jouer() -> None:
     y = position_joueur[1]
     deplacer_joueur(x, y)
     finDeplacement = False
+    # continue d'appeler deplacement() tant que la fonction ne renvoie pas true
     while(finDeplacement == False):
         finDeplacement = deplacement()
     pygame_min.quitter_jeu()
@@ -130,10 +149,18 @@ def sortir () -> None :
     print("le jeu es terminé")
 
 
-
-
-
 def deplacement () -> bool :
+    """
+    Description :
+    --------- ----
+
+    Parametres :
+    ------------
+    Retours :
+    ---------
+    true si la sortie est atteinte
+    false sinon
+    """
     global position_joueur
     finDeplacement = False
     #on defini x et y afin de pouvoir les utuliser dans la condition .
