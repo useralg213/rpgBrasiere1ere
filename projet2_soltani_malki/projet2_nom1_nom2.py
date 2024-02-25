@@ -24,6 +24,7 @@ ennemis = [[0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0] , \
 [0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0] , \
 [0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0]]
 
+
 tresors = [[0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0] , \
 [0 , 1 , 0 , 0 , 0 , 0 , 0 , 1 , 0 , 0] , \
 [0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0] , \
@@ -112,8 +113,6 @@ def jouer() -> None:
     x = position_joueur[0]
     y = position_joueur[1]
     deplacer_joueur(x, y)
-    #pour tester si le comportement du jeux si il y a un mur a l'est
-    sortie = [x+1][y]
     deplacement()
 def sortir () -> None :
     global ennemis_vaincus
@@ -121,6 +120,9 @@ def sortir () -> None :
     print("le nombre d'ennemi(s) vaincu(s) est de :", ennemis_vaincus)
     print("le nombre de tresor(s) collecté(s) est de :", tresors_collectes)
     print("le jeu es terminé")
+
+
+
 
 
 def deplacement () -> None :
@@ -145,9 +147,7 @@ def deplacement () -> None :
 
         else :
             deplacement()
-
-
-    if (direction == "Sud"):
+    elif (direction == "Sud"):
          print("le joueur va au Sud")
          # comme la direction choisie est le Sud, on fait y = -1
          y += 1
@@ -160,8 +160,7 @@ def deplacement () -> None :
 
          else :
             deplacement()
-
-    if (direction == "Ouest"):
+    elif (direction == "Ouest"):
         print("le joueur va a l'Ouest")
         # comme la direction choisie est l'Ouest, on fait x = -1
         x -= 1
@@ -174,8 +173,7 @@ def deplacement () -> None :
 
         else :
             deplacement()
-
-    if (direction == "Est"):
+    elif (direction == "Est"):
         print("le joueur va à  Est")
         # comme la direction choisie est l'Est, on fait x = -1
         x += 1
@@ -188,7 +186,11 @@ def deplacement () -> None :
 
         else:
                 deplacement()
+    elif (direction == "useralg213"):
+        tueToutLesEnnemis()
     print("fin de la fonction déplacement")
+
+
 
 def reculer () -> None :
     global position_precedente_joueur
@@ -212,7 +214,7 @@ def ramasser_tresor ( x : int , y : int ) -> None :
 
 def affronter_ennemi ( x : int , y : int ) -> bool :
     global ennemis_vaincus
-    randint(0,1)
+    global ennemis
     #Pour savoir si il y a un ennemi.
     vaincreLennemi = randint(0,1)
     if (vaincreLennemi == 1) :
@@ -224,14 +226,21 @@ def affronter_ennemi ( x : int , y : int ) -> bool :
         print("l'ennemi n'est pas vaincu")
         return False
 
-if (direction == "useralg213") :
+
+
+
+def tueToutLesEnnemis()-> None :
     global ennemis_vaincus
-    vaincreLennemi = randint(1, 1)
-    ennemis[x][y] = 0
-    ennemis_vaincus += 1ennemis[x][y] = 0
-    ennemis_vaincus += 1
-
-
+    global ennemis
+    #stock colonne dans ennemis.
+    for x, colonne in enumerate(ennemis):
+        #en plus de stocker la position il stock chaques cases  dans colonne .
+        for y, case in enumerate(colonne):
+            #si  il y a un 1 dans ennemi, alors on le transforme en 0.
+            if (case == 1):
+                ennemis[x][y] = 0
+                ennemis_vaincus += 1
+    print("félicitation,vous avez vaincu tout les ennemis !!!")
 
 
 
