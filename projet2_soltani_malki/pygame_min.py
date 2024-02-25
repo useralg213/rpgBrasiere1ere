@@ -107,17 +107,17 @@ def afficher_jeu(carte : List[List[int]], ennemis : List[List[int]], tresors : L
     for x in range(len(carte)) :
         for y in range(len(carte[0])) :
             if position_joueur[0] == x and position_joueur[1] == y :
-                screen.blit(joueur_sprite.surf, (y * taille_case, x * taille_case))
+                screen.blit(joueur_sprite.surf, (x * taille_case, y * taille_case))
             elif ennemis[x][y] >= 1 and tresors[x][y] >= 1 :
-                screen.blit(ennemi_tresor_sprite.surf, (y * taille_case, x * taille_case))
+                screen.blit(ennemi_tresor_sprite.surf, (x * taille_case, y * taille_case))
             elif ennemis[x][y] >= 1 :
-                screen.blit(ennemi_sprite.surf, (y * taille_case, x * taille_case))
+                screen.blit(ennemi_sprite.surf, (x * taille_case, y * taille_case))
             elif tresors[x][y] >= 1 :
-                screen.blit(tresor_sprite.surf, (y * taille_case, x * taille_case))
+                screen.blit(tresor_sprite.surf, (x * taille_case, x * taille_case))
             elif (x == 0 or y == 0 or x == len(carte) - 1 or y == len(carte[0]) - 1) and carte[x][y] != 0 :
-                screen.blit(bordure_sprite.surf, (y * taille_case, x * taille_case))
+                screen.blit(bordure_sprite.surf, (x * taille_case, y * taille_case))
             elif carte[x][y] == 1 :
-                screen.blit(mur_sprite.surf, (y * taille_case, x * taille_case))
+                screen.blit(mur_sprite.surf, (x * taille_case, y * taille_case))
     
     # On met a jour la fenetre
     pygame.display.flip()

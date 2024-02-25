@@ -68,6 +68,10 @@ def deplacer_joueur ( x : int , y : int ) -> None :
 
 def arriver_case() -> None :
     global position_joueur
+    global murs
+    global ennemis
+    global tresors
+    pygame_min.afficher_jeu(murs, ennemis, tresors, position_joueur)
     xPositionJoueur = position_joueur[0]
     yPositionJoueur = position_joueur[1]
 
@@ -106,14 +110,18 @@ def jouer() -> None:
     ---------
     ( None )
     """
-
+    global murs
+    pygame_min.initialiser_jeu(len(murs))
     # On fait le lien avec les variables globales
     global position_joueur
     # On deplace le joueur sur sa position initiale
     x = position_joueur[0]
     y = position_joueur[1]
     deplacer_joueur(x, y)
-    deplacement()
+    finDeplacement = False
+    while(finDeplacement == False):
+        finDeplacement = deplacement()
+    pygame_min.quitter_jeu()
 def sortir () -> None :
     global ennemis_vaincus
     global tresors_collectes
@@ -125,8 +133,9 @@ def sortir () -> None :
 
 
 
-def deplacement () -> None :
+def deplacement () -> bool :
     global position_joueur
+    finDeplacement = False
     #on defini x et y afin de pouvoir les utuliser dans la condition .
     x = position_joueur[0]
     y = position_joueur[1]
@@ -144,6 +153,7 @@ def deplacement () -> None :
             #est ce que x et y sont = a la sortie
         elif (sortie == [x, y]) :
             sortir()
+            finDeplacement = True
 
         else :
             deplacement()
@@ -154,10 +164,10 @@ def deplacement () -> None :
          # condition pour savoir si on ne sort pas du tableau et que l'on ne se trouve pas a la sortie.
          if (y<=len(murs)) and (sortie != [x, y]):
             deplacer_joueur(x, y)
-             # est ce que x et y sont = a la sortie
+            # est ce que x et y sont = a la sortie
          elif (sortie == [x, y]):
-              sortir()
-
+            sortir()
+            finDeplacement = True
          else :
             deplacement()
     elif (direction == "Ouest"):
@@ -170,7 +180,7 @@ def deplacement () -> None :
             # est ce que x et y sont = a la sortie
         elif (sortie == [x, y]):
             sortir()
-
+            finDeplacement = True
         else :
             deplacement()
     elif (direction == "Est"):
@@ -183,12 +193,14 @@ def deplacement () -> None :
             # est ce que x et y sont = a la sortie
         elif (sortie == [x, y]):
             sortir()
-
+            finDeplacement = True
         else:
                 deplacement()
     elif (direction == "useralg213"):
         tueToutLesEnnemis()
+
     print("fin de la fonction déplacement")
+    return finDeplacement
 
 
 
@@ -241,6 +253,9 @@ def tueToutLesEnnemis()-> None :
                 ennemis[x][y] = 0
                 ennemis_vaincus += 1
     print("félicitation,vous avez vaincu tout les ennemis !!!")
+
+def afficher_histoire() -> None  :
+    print("")
 
 
 
