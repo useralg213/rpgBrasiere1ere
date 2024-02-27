@@ -362,6 +362,7 @@ def phraseTireeAuSort(categorie: int) -> str :
 
 
 
+
 jouer()
 
 
