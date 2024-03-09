@@ -94,7 +94,7 @@ def arriver_case() -> None :
     yPositionJoueur = position_joueur[1]
 
     if (il_y_a_un_mur(xPositionJoueur, yPositionJoueur )) :
-        affichePhrase(1)
+        print("il y a un mur")
         detruireMur = input("souhaitez-vous détruire le mur ?")
         if (detruireMur == "Oui") :
             detruire_mur(xPositionJoueur, yPositionJoueur)
@@ -104,7 +104,7 @@ def arriver_case() -> None :
         deplacement()
 
 
-    if (il_y_a_un_ennemi(xPositionJoueur, yPositionJoueur)) :
+    elif (il_y_a_un_ennemi(xPositionJoueur, yPositionJoueur)) :
         affichePhrase(2)
         reponse = input("souhaitez-vous affronter l'ennemi ?")
         if (reponse == "Oui") :
@@ -114,7 +114,7 @@ def arriver_case() -> None :
         else:
             reculer()
             pygame_min.afficher_jeu(murs, ennemis, tresors, position_joueur)
-    if (il_y_a_un_tresor(xPositionJoueur, yPositionJoueur)) :
+    elif (il_y_a_un_tresor(xPositionJoueur, yPositionJoueur)) :
         affichePhrase(3)
         reponse = input("souhaitez-vous ramasser le trésor ?")
         if (reponse == "Oui") :
@@ -350,11 +350,12 @@ def afficher_histoire() -> None  :
     print("")
 
 def affichePhrase(categorie: int) -> None :
+
     """
             Description :
             cette fonction permet de tirer au sort une phrase parmit plusieurs .
             Parametres :
-            La fonction prend en parametre un nombre entier (int).
+            La fonction prend en parametre un nombre entier (int).categorie 1 = case vide categorie 2 = ennemi categorie 3 = tresor
             Retours :
             None
             """
