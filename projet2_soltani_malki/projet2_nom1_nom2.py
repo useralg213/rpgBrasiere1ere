@@ -254,10 +254,10 @@ def reculer () -> None :
 def detruire_mur ( x : int , y : int ) -> None :
     """
         Description :
-        --------- ----
-        Cette fonction est la fonction principale de votre RPG .
+        Cette fonction permet de detruire les murs presents sur la carte.
+
         Parametres :
-        ------------
+
         Retours :
         ---------
         ( None )
@@ -270,12 +270,13 @@ def detruire_mur ( x : int , y : int ) -> None :
 def ramasser_tresor ( x : int , y : int ) -> None :
     """
             Description :
-            --------- ----
-            Cette fonction est la fonction principale de votre RPG .
+            Fonction qui permet de ramasser les treors présents sur la carte-
+
             Parametres :
-            ------------
+            prend en parametre des coordonés de type int (nombre entiers).
+
             Retours :
-            ---------
+            ne return rien
             ( None )
             """
     global tresors_collectes
@@ -286,12 +287,12 @@ def ramasser_tresor ( x : int , y : int ) -> None :
 def affronter_ennemi ( x : int , y : int ) -> bool :
     """
         Description :
-        --------- ----
-        Cette fonction est la fonction principale de votre RPG .
+        Fonction qui permet d'affronter tout les ennemis presents sur la carte.
+
         Parametres :
-        ------------
+        prend en parametre des coordonés de type int (nombre entiers).
         Retours :
-        ---------
+        Un booléen True ou False .
         ( bool )
         """
     global ennemis_vaincus
@@ -313,12 +314,12 @@ def affronter_ennemi ( x : int , y : int ) -> bool :
 def tueToutLesEnnemis()-> None :
     """
         Description :
-        --------- ----
+        Certte fonction permet de tuer tout les ennemis sur la carte.
         Cette fonction est la fonction principale de votre RPG .
         Parametres :
-        ------------
+        Ne prend rien en parametre .
         Retours :
-        ---------
+        Ne return rien.
         ( None )
         """
     global ennemis_vaincus
@@ -336,23 +337,33 @@ def tueToutLesEnnemis()-> None :
 def afficher_histoire() -> None  :
     """
         Description :
-        --------- ----
+        cette fonction permet d'afficher l'histoire du jeu.
         Cette fonction est la fonction principale de votre RPG .
         Parametres :
-        ------------
+        La fonction ne prend aucun parametre.
         Retours :
-        ---------
+        La fonction ne retourne rien.
         ( None )
         """
     print("")
 
 def phraseTireeAuSort(categorie: int) -> str :
+    """
+            Description :
+            cette fonction permet de tirer au sort une phrase parmit plusieurs .
+            Parametres :
+            La fonction prend en parametre un nombre entier (int).
+            Retours :
+            La fonction return une chaine de caractere .
+            """
     #si la categorie = 1 alors on a une phrase de type dialogue case vide .
     if (categorie == 1):
     global dialogue_case_vide
     #sert a prendre une phrase a une certaine position .
     position = randint(0, 4)
     dialogue_case_vide[position]
+
+
 
 
 
