@@ -366,7 +366,7 @@ def phraseTireeAuSort(categorie: int) -> None :
         global dialogue_case_ennemi
         position = randint(0, 4)
         print(dialogue_case_ennemi[position])
-    elif (categorie == 2):
+    elif (categorie == 3):
         global dialogue_case_tresor
         position = randint(0, 4)
         print(dialogue_case_tresor[position])
