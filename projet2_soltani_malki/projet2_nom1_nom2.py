@@ -94,7 +94,7 @@ def arriver_case() -> None :
     yPositionJoueur = position_joueur[1]
 
     if (il_y_a_un_mur(xPositionJoueur, yPositionJoueur )) :
-        print("il y a un mur")
+        affichePhrase(1)
         detruireMur = input("souhaitez-vous détruire le mur ?")
         if (detruireMur == "Oui") :
             detruire_mur(xPositionJoueur, yPositionJoueur)
@@ -103,8 +103,9 @@ def arriver_case() -> None :
             pygame_min.afficher_jeu(murs, ennemis, tresors, position_joueur)
         deplacement()
 
+
     if (il_y_a_un_ennemi(xPositionJoueur, yPositionJoueur)) :
-        print("il y a un ennemi")
+        affichePhrase(2)
         reponse = input("souhaitez-vous affronter l'ennemi ?")
         if (reponse == "Oui") :
             if(affronter_ennemi(xPositionJoueur, yPositionJoueur) == False ) :
@@ -114,6 +115,7 @@ def arriver_case() -> None :
             reculer()
             pygame_min.afficher_jeu(murs, ennemis, tresors, position_joueur)
     if (il_y_a_un_tresor(xPositionJoueur, yPositionJoueur)) :
+        affichePhrase(3)
         reponse = input("souhaitez-vous ramasser le trésor ?")
         if (reponse == "Oui") :
             ramasser_tresor(xPositionJoueur, yPositionJoueur)
@@ -347,7 +349,7 @@ def afficher_histoire() -> None  :
         """
     print("")
 
-def phraseTireeAuSort(categorie: int) -> None :
+def affichePhrase(categorie: int) -> None :
     """
             Description :
             cette fonction permet de tirer au sort une phrase parmit plusieurs .
