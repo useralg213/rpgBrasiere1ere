@@ -340,30 +340,36 @@ def afficher_histoire() -> None  :
         cette fonction permet d'afficher l'histoire du jeu.
         Cette fonction est la fonction principale de votre RPG .
         Parametres :
-        La fonction ne prend aucun parametre.
+        Rien.
         Retours :
         La fonction ne retourne rien.
         ( None )
         """
     print("")
 
-def phraseTireeAuSort(categorie: int) -> str :
+def phraseTireeAuSort(categorie: int) -> None :
     """
             Description :
             cette fonction permet de tirer au sort une phrase parmit plusieurs .
             Parametres :
             La fonction prend en parametre un nombre entier (int).
             Retours :
-            La fonction return une chaine de caractere .
+            None
             """
     #si la categorie = 1 alors on a une phrase de type dialogue case vide .
     if (categorie == 1):
-    global dialogue_case_vide
-    #sert a prendre une phrase a une certaine position .
-    position = randint(0, 4)
-    dialogue_case_vide[position]
-
-
+        global dialogue_case_vide
+        #sert a prendre une phrase a une certaine position .
+        position = randint(0, 4)
+        print(dialogue_case_vide[position])
+    elif (categorie == 2) :
+        global dialogue_case_ennemi
+        position = randint(0, 4)
+        print(dialogue_case_ennemi[position])
+    elif (categorie == 2):
+        global dialogue_case_tresor
+        position = randint(0, 4)
+        print(dialogue_case_tresor[position])
 
 
 
