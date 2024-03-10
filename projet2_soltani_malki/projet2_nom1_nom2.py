@@ -113,6 +113,18 @@ def obtenir_position_joueur() -> List[int] :
 
 
 def deplacer_joueur ( x : int , y : int ) -> None :
+    """
+                    Description :
+                    --------- ----
+                    La fonction permet de déplacer le joueur sur la carte.
+                    Parametres :
+                    ------------
+                    x (int) : coordonnées correspondant à l'abcisse .
+                    y (int) : coordonnées correspondant à l'ordonnée .
+                    Retours :
+                    ---------
+                    ( None )
+                    """
     global position_joueur
     global position_precedente_joueur
     position_precedente_joueur = position_joueur
