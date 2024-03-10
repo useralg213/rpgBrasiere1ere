@@ -233,7 +233,6 @@ def deplacement () -> bool :
     elif (direction == "useralg213"):
         tueToutLesEnnemis()
 
-    print("fin de la fonction déplacement")
     return finDeplacement
 
 
