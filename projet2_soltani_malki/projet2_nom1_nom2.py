@@ -438,11 +438,15 @@ def affichePhrase(categorie: int) -> None :
     """
             Description :
             cette fonction permet de tirer au sort une phrase parmit plusieurs .
+
             Parametres :
-            La fonction prend en parametre un nombre entier (int).categorie 1 = case vide categorie 2 = ennemi categorie 3 = tresor
+
+            categorie: (int) categorie 1 = case vide categorie 2 = ennemi categorie 3 = tresor
+
             Retours :
-            None
-            """
+
+        ( None )
+        """
     #si la categorie = 1 alors on a une phrase de type dialogue case vide .
     if (categorie == 1):
         global dialogue_case_vide
