@@ -153,10 +153,10 @@ def sortir () -> None :
     global tresors_collectes
     print("le nombre d'ennemi(s) vaincu(s) est de :", ennemis_vaincus)
     print("le nombre de tresor(s) collecté(s) est de :", tresors_collectes)
-    print("le jeu es terminé")
+    print("le jeu est terminé")
 
 
-def deplacement () -> bool :
+def deplacement () -> bool:
     """
     Description :
     --------- ----
@@ -243,7 +243,7 @@ def reculer () -> None :
     --------- ----
     Cette fonction est la fonction principale de votre RPG .
     Parametres :
-    ------------
+
     Retours :
     ---------
     ( None )
@@ -260,6 +260,8 @@ def detruire_mur ( x : int , y : int ) -> None :
         Cette fonction permet de detruire les murs presents sur la carte.
 
         Parametres :
+        x (int) : coordonnées correspondant à l'abcisse .
+        y (int) : coordonnées correspondant à l'ordonnée .
 
         Retours :
         ---------
@@ -273,13 +275,13 @@ def detruire_mur ( x : int , y : int ) -> None :
 def ramasser_tresor ( x : int , y : int ) -> None :
     """
             Description :
-            Fonction qui permet de ramasser les treors présents sur la carte-
+            Fonction qui permet de ramasser les treors présents sur la carte.
 
             Parametres :
-            prend en parametre des coordonés de type int (nombre entiers).
+             x (int) : coordonnées correspondant à l'abcisse .
+             y (int) : coordonnées correspondant à l'ordonnée .
 
             Retours :
-            ne return rien
             ( None )
             """
     global tresors_collectes
@@ -293,9 +295,10 @@ def affronter_ennemi ( x : int , y : int ) -> bool :
         Fonction qui permet d'affronter tout les ennemis presents sur la carte.
 
         Parametres :
-        prend en parametre des coordonés de type int (nombre entiers).
+         x (int) : coordonnées correspondant à l'abcisse .
+         y (int) : coordonnées correspondant à l'ordonnée .
+
         Retours :
-        Un booléen True ou False .
         ( bool )
         """
     global ennemis_vaincus
@@ -374,8 +377,6 @@ def affichePhrase(categorie: int) -> None :
         global dialogue_case_tresor
         position = randint(0, 4)
         print(dialogue_case_tresor[position])
-
-
 
 
 
