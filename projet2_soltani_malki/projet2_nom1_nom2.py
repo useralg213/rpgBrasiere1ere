@@ -85,6 +85,16 @@ def deplacer_joueur ( x : int , y : int ) -> None :
 
 
 def arriver_case() -> None :
+    """
+        Description :
+        --------- ----
+        La fonction permet de gérer l'arrivée du joueur dans une case .
+        Parametres :
+        ------------
+        Retours :
+        ---------
+        ( None )
+        """
     global position_joueur
     global murs
     global ennemis
