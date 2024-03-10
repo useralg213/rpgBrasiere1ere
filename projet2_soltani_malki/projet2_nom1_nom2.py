@@ -67,8 +67,8 @@ def il_y_a_un_mur ( x : int , y : int ) -> bool :
         La fonction vérifie la présence d'un mur.
         Parametres :
         ------------
-        x (int) : coordonnées correspondant à l'abcisse .
-        y (int) : coordonnées correspondant à l'ordonnée .
+        x (int) : coordonnées correspondant à l'abcisse de la case.
+        y (int) : coordonnées correspondant à l'ordonnée de la case.
         Retours :
         ---------
         ( None )
@@ -84,8 +84,8 @@ def il_y_a_un_ennemi(x: int, y: int) -> bool:
         La fonction vérifie la présence d'un ennemi.
         Parametres :
         ------------
-        x (int) : coordonnées correspondant à l'abcisse .
-        y (int) : coordonnées correspondant à l'ordonnée .
+        x (int) : coordonnées correspondant à l'abcisse de la case.
+        y (int) : coordonnées correspondant à l'ordonnée de la case.
         Retours :
         ---------
         ( None )
@@ -100,8 +100,8 @@ def il_y_a_un_tresor(x: int, y: int ) -> bool:
         La fonction vérifie la présence d'un tresor.
         Parametres :
         ------------
-        x (int) : coordonnées correspondant à l'abcisse .
-        y (int) : coordonnées correspondant à l'ordonnée .
+        x (int) : coordonnées correspondant à l'abcisse de la case.
+        y (int) : coordonnées correspondant à l'ordonnée de la case.
         Retours :
         ---------
         ( None )
@@ -119,9 +119,9 @@ def obtenir_position_joueur() -> List[int] :
 
         Retours :
         ---------
-        (List[int])
+        (List[int]): la position du joueur
         """
-
+    global position_joueur
     return position_joueur
 
 
@@ -132,8 +132,8 @@ def deplacer_joueur ( x : int , y : int ) -> None :
         La fonction permet de déplacer le joueur sur la carte.
         Parametres :
         ------------
-        x (int) : coordonnées correspondant à l'abcisse .
-        y (int) : coordonnées correspondant à l'ordonnée .
+        x (int) : coordonnées correspondant à l'abcisse de la nouvelle coordonnées.
+        y (int) : coordonnées correspondant à l'ordonnée de la nouvelle coordonnées.
         Retours :
         ---------
         ( None )
@@ -347,8 +347,8 @@ def detruire_mur ( x : int , y : int ) -> None :
         Cette fonction permet de detruire les murs presents sur la carte.
 
         Parametres :
-        x (int) : coordonnées correspondant à l'abcisse .
-        y (int) : coordonnées correspondant à l'ordonnée .
+        x (int) : coordonnées correspondant à l'abcisse du mur à détruire.
+        y (int) : coordonnées correspondant à l'ordonnée du mur à détruire.
 
         Retours :
         ---------
@@ -362,11 +362,11 @@ def detruire_mur ( x : int , y : int ) -> None :
 def ramasser_tresor ( x : int , y : int ) -> None :
     """
         Description :
-        Fonction qui permet de ramasser les treors présents sur la carte.
+        Fonction qui permet de ramasser les tresors présents sur la carte.
 
         Parametres :
-         x (int) : coordonnées correspondant à l'abcisse .
-         y (int) : coordonnées correspondant à l'ordonnée .
+         x (int) : coordonnées correspondant à l'abcisse de la case du trésor à récupérer.
+         y (int) : coordonnées correspondant à l'ordonnée de la case du trésor à récupérer.
 
         Retours :
         ( None )
@@ -379,7 +379,7 @@ def ramasser_tresor ( x : int , y : int ) -> None :
 def affronter_ennemi ( x : int , y : int ) -> bool :
     """
         Description :
-        Fonction qui permet d'affronter tout les ennemis presents sur la carte.
+        Fonction qui permet d'affronter l'ennemi à la nouvelle position du joueur
 
         Parametres :
          x (int) : coordonnées correspondant à l'abcisse .
@@ -442,7 +442,8 @@ def afficher_histoire() -> None  :
 def affichePhrase(categorie: int) -> None :
     """
         Description :
-        cette fonction permet de tirer au sort une phrase parmit plusieurs .
+        cette fonction permet de tirer au sort une phrase parmis plusieurs selon la bonne catégorie (case vide
+        case avec un ennemi, case avec un trésor) et de l'afficher.
 
         Parametres :
 
