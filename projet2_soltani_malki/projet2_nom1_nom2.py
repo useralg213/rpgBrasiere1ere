@@ -2,6 +2,7 @@ import pygame_min
 from typing import List
 from random import randint
 
+
 murs = [[1 , 1 , 1 , 1 , 0 , 1 , 1 , 1 , 1 , 1] , \
 [1 , 0 , 1 , 0 , 0 , 0 , 1 , 0 , 0 , 1] , \
 [1 , 0 , 1 , 1 , 0 , 1 , 1 , 1 , 0 , 1] , \
@@ -195,6 +196,7 @@ def arriver_case() -> None :
 
 
 def jouer() -> None:
+    afficher_histoire()
     """
         Description :
         --------- ----
@@ -380,7 +382,7 @@ def affronter_ennemi ( x : int , y : int ) -> bool :
 
         Retours :
         ( bool )
-        """
+    """
     global ennemis_vaincus
     global ennemis
     #Pour savoir si il y a un ennemi.
@@ -395,10 +397,8 @@ def affronter_ennemi ( x : int , y : int ) -> bool :
         return False
 
 
-
-
 def tueToutLesEnnemis()-> None :
-     """
+    """
         Description :
         Fonction qui permet de tuer tout les ennemis présents sur la carte.
 
@@ -406,19 +406,20 @@ def tueToutLesEnnemis()-> None :
 
         Retours :
         ( None )
-        """
+    """
 
-        global ennemis_vaincus
-        global ennemis
-        #stock colonne dans ennemis.
-        for x, colonne in enumerate(ennemis):
-            #en plus de stocker la position il stock chaques cases  dans colonne .
-            for y, case in enumerate(colonne):
-                #si  il y a un 1 dans ennemi, alors on le transforme en 0.
-                if (case == 1):
-                    ennemis[x][y] = 0
-                    ennemis_vaincus += 1
-        print("félicitation,vous avez vaincu tout les ennemis !!!")
+    global ennemis_vaincus
+    global ennemis
+    #stock colonne dans ennemis.
+    for x, colonne in enumerate(ennemis):
+        #en plus de stocker la position il stock chaques cases  dans colonne .
+        for y, case in enumerate(colonne):
+            #si  il y a un 1 dans ennemi, alors on le transforme en 0.
+            if (case == 1):
+                ennemis[x][y] = 0
+                ennemis_vaincus += 1
+    print("félicitation,vous avez vaincu tout les ennemis !!!")
+
 
 def afficher_histoire() -> None  :
     """
@@ -430,11 +431,10 @@ def afficher_histoire() -> None  :
         Retours :
 
         ( None )
-        """
-    print("")
+    """
+    print("début histoire")
 
 def affichePhrase(categorie: int) -> None :
-
     """
         Description :
         cette fonction permet de tirer au sort une phrase parmit plusieurs .
