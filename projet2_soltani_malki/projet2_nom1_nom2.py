@@ -60,15 +60,51 @@ dialogue_case_tresor = ["phrase case tresor 1",
                       "phrase case tresor 4",
                       "phrase case vide tresor 5"]
 def il_y_a_un_mur ( x : int , y : int ) -> bool :
+    """
+            Description :
+            --------- ----
+            La fonction vérifie la présence d'un mur.
+            Parametres :
+            ------------
+            x (int) : coordonnées correspondant à l'abcisse .
+            y (int) : coordonnées correspondant à l'ordonnée .
+            Retours :
+            ---------
+            ( None )
+            """
     # on recupere la valeur a la position x,y du tableau et on verifie si il y a un 1.
     return murs[x][y] == 1
 
 
-def il_y_a_un_ennemi(x: int, y: int) -> bool :
+def il_y_a_un_ennemi(x: int, y: int) -> bool:
+    """
+                Description :
+                --------- ----
+                La fonction vérifie la présence d'un ennemi.
+                Parametres :
+                ------------
+                x (int) : coordonnées correspondant à l'abcisse .
+                y (int) : coordonnées correspondant à l'ordonnée .
+                Retours :
+                ---------
+                ( None )
+                """
     return ennemis[x][y] == 1
 
 
-def il_y_a_un_tresor(x: int, y: int ) -> bool :
+def il_y_a_un_tresor(x: int, y: int ) -> bool:
+    """
+                    Description :
+                    --------- ----
+                    La fonction vérifie la présence d'un tresor.
+                    Parametres :
+                    ------------
+                    x (int) : coordonnées correspondant à l'abcisse .
+                    y (int) : coordonnées correspondant à l'ordonnée .
+                    Retours :
+                    ---------
+                    ( None )
+                    """
     return tresors[x][y] == 1
 
 
