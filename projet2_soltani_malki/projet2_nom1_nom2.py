@@ -61,82 +61,82 @@ dialogue_case_tresor = ["phrase case tresor 1",
                       "phrase case vide tresor 5"]
 def il_y_a_un_mur ( x : int , y : int ) -> bool :
     """
-            Description :
-            --------- ----
-            La fonction vérifie la présence d'un mur.
-            Parametres :
-            ------------
-            x (int) : coordonnées correspondant à l'abcisse .
-            y (int) : coordonnées correspondant à l'ordonnée .
-            Retours :
-            ---------
-            ( None )
-            """
+        Description :
+        --------- ----
+        La fonction vérifie la présence d'un mur.
+        Parametres :
+        ------------
+        x (int) : coordonnées correspondant à l'abcisse .
+        y (int) : coordonnées correspondant à l'ordonnée .
+        Retours :
+        ---------
+        ( None )
+        """
     # on recupere la valeur a la position x,y du tableau et on verifie si il y a un 1.
     return murs[x][y] == 1
 
 
 def il_y_a_un_ennemi(x: int, y: int) -> bool:
     """
-                Description :
-                --------- ----
-                La fonction vérifie la présence d'un ennemi.
-                Parametres :
-                ------------
-                x (int) : coordonnées correspondant à l'abcisse .
-                y (int) : coordonnées correspondant à l'ordonnée .
-                Retours :
-                ---------
-                ( None )
-                """
+        Description :
+        --------- ----
+        La fonction vérifie la présence d'un ennemi.
+        Parametres :
+        ------------
+        x (int) : coordonnées correspondant à l'abcisse .
+        y (int) : coordonnées correspondant à l'ordonnée .
+        Retours :
+        ---------
+        ( None )
+        """
     return ennemis[x][y] == 1
 
 
 def il_y_a_un_tresor(x: int, y: int ) -> bool:
     """
-                    Description :
-                    --------- ----
-                    La fonction vérifie la présence d'un tresor.
-                    Parametres :
-                    ------------
-                    x (int) : coordonnées correspondant à l'abcisse .
-                    y (int) : coordonnées correspondant à l'ordonnée .
-                    Retours :
-                    ---------
-                    ( None )
-                    """
+        Description :
+        --------- ----
+        La fonction vérifie la présence d'un tresor.
+        Parametres :
+        ------------
+        x (int) : coordonnées correspondant à l'abcisse .
+        y (int) : coordonnées correspondant à l'ordonnée .
+        Retours :
+        ---------
+        ( None )
+        """
     return tresors[x][y] == 1
 
 
 def obtenir_position_joueur() -> List[int] :
     """
-                        Description :
-                        --------- ----
-                        La fonction permet d'obtenir la position du joueur.
-                        Parametres :
-                        ------------
+        Description :
+        --------- ----
+        La fonction permet d'obtenir la position du joueur.
+        Parametres :
+        ------------
 
-                        Retours :
-                        ---------
-                        (List[int])
-                        """
+        Retours :
+        ---------
+        (List[int])
+        """
 
     return position_joueur
 
 
 def deplacer_joueur ( x : int , y : int ) -> None :
     """
-                    Description :
-                    --------- ----
-                    La fonction permet de déplacer le joueur sur la carte.
-                    Parametres :
-                    ------------
-                    x (int) : coordonnées correspondant à l'abcisse .
-                    y (int) : coordonnées correspondant à l'ordonnée .
-                    Retours :
-                    ---------
-                    ( None )
-                    """
+        Description :
+        --------- ----
+        La fonction permet de déplacer le joueur sur la carte.
+        Parametres :
+        ------------
+        x (int) : coordonnées correspondant à l'abcisse .
+        y (int) : coordonnées correspondant à l'ordonnée .
+        Retours :
+        ---------
+        ( None )
+         """
     global position_joueur
     global position_precedente_joueur
     position_precedente_joueur = position_joueur
@@ -196,15 +196,15 @@ def arriver_case() -> None :
 
 def jouer() -> None:
     """
-    Description :
-    --------- ----
-    Cette fonction est la fonction principale de votre RPG .
-    Parametres :
-    ------------
-    Retours :
-    ---------
-    ( None )
-    """
+        Description :
+        --------- ----
+        Cette fonction est la fonction principale de votre RPG .
+        Parametres :
+        ------------
+        Retours :
+        ---------
+        ( None )
+        """
     global murs
     pygame_min.initialiser_jeu(len(murs))
     # On fait le lien avec les variables globales
@@ -220,15 +220,15 @@ def jouer() -> None:
     pygame_min.quitter_jeu()
 def sortir () -> None :
     """
-                       Description :
-                       --------- ----
-                       La fonction affiche un message de sorti.
-                       Parametres :
-                       ------------
+         Description :
+         --------- ----
+         La fonction affiche un message de sorti.
+         Parametres :
+         ------------
 
-                       Retours :
-                       ---------
-                       ( None )
+         Retours :
+         ---------
+         ( None )
                        """
     global ennemis_vaincus
     global tresors_collectes
@@ -239,15 +239,15 @@ def sortir () -> None :
 
 def deplacement () -> bool:
     """
-    Description :
-    Permet de gérer le déplacement du joueur.
+        Description :
+        Permet de gérer le déplacement du joueur.
 
-    Parametres :
-    ------------
-    Retours :
-    ---------
-    (bool)
-    """
+        Parametres :
+        ------------
+        Retours :
+        ---------
+        (bool)
+        """
     global position_joueur
     finDeplacement = False
     #on defini x et y afin de pouvoir les utuliser dans la condition .
@@ -319,15 +319,15 @@ def deplacement () -> bool:
 
 def reculer () -> None :
     """
-    Description :
-    Cette fonction permet de reculer sur la carte .
+        Description :
+        Cette fonction permet de reculer sur la carte .
 
-    Parametres :
+        Parametres :
 
-    Retours :
-    ---------
-    ( None )
-    """
+        Retours :
+        ---------
+        ( None )
+        """
     global position_precedente_joueur
     global position_joueur
     position_joueur = position_precedente_joueur
@@ -354,16 +354,16 @@ def detruire_mur ( x : int , y : int ) -> None :
 
 def ramasser_tresor ( x : int , y : int ) -> None :
     """
-            Description :
-            Fonction qui permet de ramasser les treors présents sur la carte.
+        Description :
+        Fonction qui permet de ramasser les treors présents sur la carte.
 
-            Parametres :
-             x (int) : coordonnées correspondant à l'abcisse .
-             y (int) : coordonnées correspondant à l'ordonnée .
+        Parametres :
+         x (int) : coordonnées correspondant à l'abcisse .
+         y (int) : coordonnées correspondant à l'ordonnée .
 
-            Retours :
-            ( None )
-            """
+        Retours :
+        ( None )
+        """
     global tresors_collectes
     tresors_collectes += 1
     print("vous venez d'acquerir un nouveau tresor : Bravo! ")
@@ -399,26 +399,26 @@ def affronter_ennemi ( x : int , y : int ) -> bool :
 
 def tueToutLesEnnemis()-> None :
      """
-            Description :
-            Fonction qui permet de tuer tout les ennemis présents sur la carte.
+        Description :
+        Fonction qui permet de tuer tout les ennemis présents sur la carte.
 
-            Parametres :
+        Parametres :
 
-             Retours :
-            ( None )
-            """
+        Retours :
+        ( None )
+        """
 
-    global ennemis_vaincus
-    global ennemis
-    #stock colonne dans ennemis.
-    for x, colonne in enumerate(ennemis):
-        #en plus de stocker la position il stock chaques cases  dans colonne .
-        for y, case in enumerate(colonne):
-            #si  il y a un 1 dans ennemi, alors on le transforme en 0.
-            if (case == 1):
-                ennemis[x][y] = 0
-                ennemis_vaincus += 1
-    print("félicitation,vous avez vaincu tout les ennemis !!!")
+        global ennemis_vaincus
+        global ennemis
+        #stock colonne dans ennemis.
+        for x, colonne in enumerate(ennemis):
+            #en plus de stocker la position il stock chaques cases  dans colonne .
+            for y, case in enumerate(colonne):
+                #si  il y a un 1 dans ennemi, alors on le transforme en 0.
+                if (case == 1):
+                    ennemis[x][y] = 0
+                    ennemis_vaincus += 1
+        print("félicitation,vous avez vaincu tout les ennemis !!!")
 
 def afficher_histoire() -> None  :
     """
@@ -436,17 +436,17 @@ def afficher_histoire() -> None  :
 def affichePhrase(categorie: int) -> None :
 
     """
-            Description :
-            cette fonction permet de tirer au sort une phrase parmit plusieurs .
+        Description :
+        cette fonction permet de tirer au sort une phrase parmit plusieurs .
 
-            Parametres :
+        Parametres :
 
-            categorie: (int) categorie 1 = case vide categorie 2 = ennemi categorie 3 = tresor
+        categorie: (int) categorie 1 = case vide categorie 2 = ennemi categorie 3 = tresor
 
-            Retours :
+        Retours :
 
-        ( None )
-        """
+    ( None )
+    """
     #si la categorie = 1 alors on a une phrase de type dialogue case vide .
     if (categorie == 1):
         global dialogue_case_vide
