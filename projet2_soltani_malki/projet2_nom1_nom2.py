@@ -138,7 +138,7 @@ def deplacer_joueur ( x : int , y : int ) -> None :
         ---------
         ( None )
          """
-    global position_joueur
+    position_joueur = obtenir_position_joueur()
     global position_precedente_joueur
     position_precedente_joueur = position_joueur
     position_joueur = [x, y]
@@ -156,7 +156,7 @@ def arriver_case() -> None :
         ---------
         ( None )
         """
-    global position_joueur
+    rposition_joueur = obtenir_position_joueur()
     global murs
     global ennemis
     global tresors
@@ -213,7 +213,7 @@ def jouer() -> None:
     global murs
     pygame_min.initialiser_jeu(len(murs))
     # On fait le lien avec les variables globales
-    global position_joueur
+    position_joueur = obtenir_position_joueur()
     # On deplace le joueur sur sa position initiale
     x = position_joueur[0]
     y = position_joueur[1]
@@ -253,7 +253,7 @@ def deplacement () -> bool:
         ---------
         (bool)
         """
-    global position_joueur
+    position_joueur = obtenir_position_joueur()
     finDeplacement = False
     #on defini x et y afin de pouvoir les utuliser dans la condition .
     x = position_joueur[0]
@@ -282,7 +282,7 @@ def deplacement () -> bool:
          # comme la direction choisie est le Sud, on fait y = -1
          y += 1
          # condition pour savoir si on ne sort pas du tableau et que l'on ne se trouve pas a la sortie.
-         if (y<=len(murs)) and (sortie != [x, y]):
+         if (y<len(murs)) and (sortie != [x, y]):
             deplacer_joueur(x, y)
             # est ce que x et y sont = a la sortie
          elif (sortie == [x, y]):
@@ -308,7 +308,7 @@ def deplacement () -> bool:
         # comme la direction choisie est l'Est, on fait x = -1
         x += 1
         # condition pour savoir si on ne sort pas du tableau et que l'on ne se trouve pas a la sortie.
-        if (x <= len(murs)) and (sortie != [x, y]):
+        if (x < len(murs)) and (sortie != [x, y]):
             deplacer_joueur(x, y)
             # est ce que x et y sont = a la sortie
         elif (sortie == [x, y]):
@@ -336,7 +336,7 @@ def reculer () -> None :
         ( None )
         """
     global position_precedente_joueur
-    global position_joueur
+    position_joueur = obtenir_position_joueur()
     position_joueur = position_precedente_joueur
 
 
@@ -467,12 +467,6 @@ def affichePhrase(categorie: int) -> None :
         global dialogue_case_tresor
         position = randint(0, 4)
         print(dialogue_case_tresor[position])
-
-
-
-
-
-
 
 
 jouer()
