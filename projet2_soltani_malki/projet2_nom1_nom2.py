@@ -166,21 +166,22 @@ def arriver_case() -> None :
 
     if (il_y_a_un_mur(xPositionJoueur, yPositionJoueur )) :
         print("il y a un mur")
-        detruireMur = input("souhaitez-vous détruire le mur ?")
-        if (detruireMur == "Oui") :
+        reponse = input("souhaitez-vous détruire le mur ?")
+        reponse = reponse.lower()
+        if (reponse == "oui"):
             detruire_mur(xPositionJoueur, yPositionJoueur)
         else:
             reculer()
             pygame_min.afficher_jeu(murs, ennemis, tresors, position_joueur)
         deplacement()
-
-
     elif (il_y_a_un_ennemi(xPositionJoueur, yPositionJoueur)) :
         affichePhrase(2)
         reponse = input("souhaitez-vous affronter l'ennemi ?")
-        if (reponse == "Oui") :
+        reponse = reponse.lower()
+        if (reponse == "oui") :
             if(affronter_ennemi(xPositionJoueur, yPositionJoueur) == False ) :
                 reculer()
+
                 pygame_min.afficher_jeu(murs, ennemis, tresors, position_joueur)
         else:
             reculer()
@@ -188,9 +189,11 @@ def arriver_case() -> None :
     elif (il_y_a_un_tresor(xPositionJoueur, yPositionJoueur)) :
         affichePhrase(3)
         reponse = input("souhaitez-vous ramasser le trésor ?")
-        if (reponse == "Oui") :
+        reponse = reponse.lower()
+        if (reponse == "oui") :
             ramasser_tresor(xPositionJoueur, yPositionJoueur)
         deplacement()
+
     else:
         affichePhrase(1)
 
@@ -259,7 +262,8 @@ def deplacement () -> bool:
     direction = input("Dans quelle direction voulez-vous aller?")
     # si l'utilisateur a rentré Nord alors on rentre dans le if
     print("direction choisie est :", direction)
-    if(direction == "Nord"):
+    direction = direction.lower()
+    if(direction == "nord"):
         print("le joueur va au nord")
         # comme la direction choisie est le nord, on fait y = -1
         y -= 1
@@ -273,7 +277,7 @@ def deplacement () -> bool:
 
         else :
             deplacement()
-    elif (direction == "Sud"):
+    elif (direction == "sud"):
          print("le joueur va au Sud")
          # comme la direction choisie est le Sud, on fait y = -1
          y += 1
@@ -286,7 +290,7 @@ def deplacement () -> bool:
             finDeplacement = True
          else :
             deplacement()
-    elif (direction == "Ouest"):
+    elif (direction == "ouest"):
         print("le joueur va a l'Ouest")
         # comme la direction choisie est l'Ouest, on fait x = -1
         x -= 1
@@ -299,7 +303,7 @@ def deplacement () -> bool:
             finDeplacement = True
         else :
             deplacement()
-    elif (direction == "Est"):
+    elif (direction == "est"):
         print("le joueur va à  Est")
         # comme la direction choisie est l'Est, on fait x = -1
         x += 1
@@ -314,7 +318,8 @@ def deplacement () -> bool:
                 deplacement()
     elif (direction == "useralg213"):
         tueToutLesEnnemis()
-
+    else:
+        print("direction non reconnu, les directions possibles sont: Nord, Sud, Est, Ouest")
     return finDeplacement
 
 
