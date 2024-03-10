@@ -109,6 +109,18 @@ def il_y_a_un_tresor(x: int, y: int ) -> bool:
 
 
 def obtenir_position_joueur() -> List[int] :
+    """
+                        Description :
+                        --------- ----
+                        La fonction permet d'obtenir la position du joueur.
+                        Parametres :
+                        ------------
+
+                        Retours :
+                        ---------
+                        (List[int])
+                        """
+
     return position_joueur
 
 
@@ -207,6 +219,17 @@ def jouer() -> None:
         finDeplacement = deplacement()
     pygame_min.quitter_jeu()
 def sortir () -> None :
+    """
+                       Description :
+                       --------- ----
+                       La fonction affiche un message de sorti.
+                       Parametres :
+                       ------------
+
+                       Retours :
+                       ---------
+                       ( None )
+                       """
     global ennemis_vaincus
     global tresors_collectes
     print("le nombre d'ennemi(s) vaincu(s) est de :", ennemis_vaincus)
@@ -375,16 +398,16 @@ def affronter_ennemi ( x : int , y : int ) -> bool :
 
 
 def tueToutLesEnnemis()-> None :
-    """
-        Description :
-        Certte fonction permet de tuer tout les ennemis sur la carte.
-        Cette fonction est la fonction principale de votre RPG .
-        Parametres :
-        Ne prend rien en parametre .
-        Retours :
-        Ne return rien.
-        ( None )
-        """
+     """
+            Description :
+            Fonction qui permet de tuer tout les ennemis présents sur la carte.
+
+            Parametres :
+
+             Retours :
+            ( None )
+            """
+
     global ennemis_vaincus
     global ennemis
     #stock colonne dans ennemis.
@@ -401,11 +424,11 @@ def afficher_histoire() -> None  :
     """
         Description :
         cette fonction permet d'afficher l'histoire du jeu.
-        Cette fonction est la fonction principale de votre RPG .
+
         Parametres :
-        Rien.
+
         Retours :
-        La fonction ne retourne rien.
+
         ( None )
         """
     print("")
