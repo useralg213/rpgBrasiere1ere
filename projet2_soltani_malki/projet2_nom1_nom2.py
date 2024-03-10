@@ -159,14 +159,13 @@ def sortir () -> None :
 def deplacement () -> bool:
     """
     Description :
-    --------- ----
+    Permet de gérer le déplacement du joueur.
 
     Parametres :
     ------------
     Retours :
     ---------
-    true si la sortie est atteinte
-    false sinon
+    (bool)
     """
     global position_joueur
     finDeplacement = False
@@ -240,8 +239,8 @@ def deplacement () -> bool:
 def reculer () -> None :
     """
     Description :
-    --------- ----
-    Cette fonction est la fonction principale de votre RPG .
+    Cette fonction permet de reculer sur la carte .
+
     Parametres :
 
     Retours :
