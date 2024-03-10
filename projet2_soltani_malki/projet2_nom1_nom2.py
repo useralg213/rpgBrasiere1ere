@@ -120,6 +120,8 @@ def arriver_case() -> None :
         if (reponse == "Oui") :
             ramasser_tresor(xPositionJoueur, yPositionJoueur)
         deplacement()
+    else:
+        affichePhrase(1)
 
 
 def jouer() -> None:
