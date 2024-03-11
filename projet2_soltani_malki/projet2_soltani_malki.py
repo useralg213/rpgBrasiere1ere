@@ -45,21 +45,20 @@ sortie = [0, 4]
 tresors_collectes = 0
 ennemis_vaincus = 0
 
-dialogue_case_vide = ["phrase case vide 1",
-                      "phrase case vide 2",
-                      "phrase case vide 3",
-                      "phrase case vide 4",
-                      "phrase case vide 5"]
-dialogue_case_ennemi = ["phrase case ennemi 1",
-                      "phrase case ennemi 2",
-                      "phrase case ennemi 3",
-                      "phrase case ennemi 4",
-                      "phrase case ennemi 5"]
-dialogue_case_tresor = ["phrase case tresor 1",
-                      "phrase case tresor 2",
-                      "phrase case tresor 3",
-                      "phrase case tresor 4",
-                      "phrase case vide tresor 5"]
+dialogue_case_vide = ["Il n'y a rien de spécial sur cette case. Le joueur continue son chemin, sans s'attarder !",
+                      "Oh la la, le joueur arrive sur une case vide, pas de trésor en vue!",
+                      "La case est vide, il n y'a rien de captivant ici.",
+                      "Rien de palpitant, passons!",
+                      "Le joueur explore une case vide. Pas grand chose d'excitant ici, on continue !"]
+dialogue_case_ennemi = ["Oh le joueur est attaqué par un Dragon! Il faut se défendre et montrer à cet ennemi de quoi on est capable !"
+                      "Un fantome surgit de nulle part. Le joueur doit se défendre !",
+                      "Attention, ça devient dangereux ! Un Gobelin se trouve sur cette case, il va falloir se préparer pour le combat !",
+                      "L'ennemi bloque le passage du joueur, mais ne t'inquiète pas on va trouver une solution.",]
+dialogue_case_tresor = ["Hourra ! Un coffre se cache ici ! C'est excellent!",
+                      "Le joueur met la main sur une Pierre De L'Aventure. Quelle merveille !",
+                      "La case renferme un une amulette inestimable. Le joueur est aux anges !",
+                      "Waouh ! Le joueur a mis la mais sur un fruit magique ! Quelle chance !",
+                      "Le joueur découvre un   sur cette case. Quelle aventure incroyable !"]
 def il_y_a_un_mur ( x : int , y : int ) -> bool :
     """
         Description :
