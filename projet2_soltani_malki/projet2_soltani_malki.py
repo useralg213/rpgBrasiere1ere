@@ -181,7 +181,6 @@ def arriver_case() -> None :
         if (reponse == "oui") :
             if(affronter_ennemi(xPositionJoueur, yPositionJoueur) == False ) :
                 reculer()
-
                 pygame_min.afficher_jeu(murs, ennemis, tresors, position_joueur)
         else:
             reculer()
@@ -437,7 +436,7 @@ def afficher_histoire() -> None  :
 
         ( None )
     """
-    print("début histoire")
+    print("Alors que vous partez à la recherche de la légendaire pierre philosophique, un groupe de bandit vous tend une embuscade et vous capture. Après vous avoir amené dans leur cave fortifiée contenant tous les trésors volés, vous réussissez à vous libérer. Vous devez maintenant trouver la sortie.")
 
 def affichePhrase(categorie: int) -> None :
     """
