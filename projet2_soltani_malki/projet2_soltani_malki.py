@@ -156,7 +156,7 @@ def arriver_case() -> None :
         ---------
         ( None )
         """
-    rposition_joueur = obtenir_position_joueur()
+    position_joueur = obtenir_position_joueur()
     global murs
     global ennemis
     global tresors
