@@ -58,7 +58,7 @@ dialogue_case_tresor = ["Hourra ! Un coffre se cache ici ! C'est excellent!",
                       "Le joueur met la main sur une Pierre De L'Aventure. Quelle merveille !",
                       "La case renferme un une amulette inestimable. Le joueur est aux anges !",
                       "Waouh ! Le joueur a mis la mais sur un fruit magique ! Quelle chance !",
-                      "Le joueur découvre un   sur cette case. Quelle aventure incroyable !"]
+                      "Le joueur découvre une rose enchanté  sur cette case. Quelle aventure incroyable !"]
 def il_y_a_un_mur ( x : int , y : int ) -> bool :
     """
         Description :
