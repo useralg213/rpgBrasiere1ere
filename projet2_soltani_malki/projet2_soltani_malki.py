@@ -53,6 +53,7 @@ dialogue_case_vide = ["Il n'y a rien de spécial sur cette case. Le joueur conti
 dialogue_case_ennemi = ["Oh le joueur est attaqué par un Dragon! Il faut se défendre et montrer à cet ennemi de quoi on est capable !"
                       "Un fantome surgit de nulle part. Le joueur doit se défendre !",
                       "Attention, ça devient dangereux ! Un Gobelin se trouve sur cette case, il va falloir se préparer pour le combat !",
+                      "La case est prise d'assaut par un des bandit! Allons nous battre !",
                       "L'ennemi bloque le passage du joueur, mais ne t'inquiète pas on va trouver une solution.",]
 dialogue_case_tresor = ["Hourra ! Un coffre se cache ici ! C'est excellent!",
                       "Le joueur met la main sur une Pierre De L'Aventure. Quelle merveille !",
