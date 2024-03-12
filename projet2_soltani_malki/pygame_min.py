@@ -101,7 +101,7 @@ def afficher_jeu(carte : List[List[int]], ennemis : List[List[int]], tresors : L
     pygame.event.get()
     
     # On choisit la couleur de fond de la fenetre
-    screen.fill((107, 150, 74))
+    screen.fill((255, 255, 255))
     
     # On parcourt les coordonnees de la carte et on dessine les bons sprites aux bons endroits
     for x in range(len(carte)) :
