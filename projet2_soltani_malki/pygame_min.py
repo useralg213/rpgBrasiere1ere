@@ -113,7 +113,7 @@ def afficher_jeu(carte : List[List[int]], ennemis : List[List[int]], tresors : L
             elif ennemis[x][y] >= 1 :
                 screen.blit(ennemi_sprite.surf, (x * taille_case, y * taille_case))
             elif tresors[x][y] >= 1 :
-                screen.blit(tresor_sprite.surf, (x * taille_case, x * taille_case))
+                screen.blit(tresor_sprite.surf, (x * taille_case, y * taille_case))
             elif (x == 0 or y == 0 or x == len(carte) - 1 or y == len(carte[0]) - 1) and carte[x][y] != 0 :
                 screen.blit(bordure_sprite.surf, (x * taille_case, y * taille_case))
             elif carte[x][y] == 1 :
