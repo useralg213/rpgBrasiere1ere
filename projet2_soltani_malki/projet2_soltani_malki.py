@@ -39,8 +39,8 @@ tresors = [[0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0] , \
 
 
 
-position_joueur = [5, 5]
-position_precedente_joueur = [0, 4]
+position_joueur = [6, 3]
+position_precedente_joueur = [5, 5]
 sortie = [0, 4]
 tresors_collectes = 0
 ennemis_vaincus = 0
@@ -138,7 +138,7 @@ def deplacer_joueur ( x : int , y : int ) -> None :
         ---------
         ( None )
          """
-    position_joueur = obtenir_position_joueur()
+    global position_joueur
     global position_precedente_joueur
     position_precedente_joueur = position_joueur
     position_joueur = [x, y]
@@ -156,7 +156,7 @@ def arriver_case() -> None :
         ---------
         ( None )
         """
-    position_joueur = obtenir_position_joueur()
+    global position_joueur
     global murs
     global ennemis
     global tresors
@@ -335,7 +335,7 @@ def reculer () -> None :
         ( None )
         """
     global position_precedente_joueur
-    position_joueur = obtenir_position_joueur()
+    global position_joueur
     position_joueur = position_precedente_joueur
 
 
