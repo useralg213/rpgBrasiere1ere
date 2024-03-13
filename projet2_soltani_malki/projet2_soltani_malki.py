@@ -39,8 +39,8 @@ tresors = [[0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0] , \
 
 
 
-position_joueur = [6, 3]
-position_precedente_joueur = [5, 5]
+position_joueur = [2, 1]
+position_precedente_joueur = [2, 1]
 sortie = [0, 4]
 tresors_collectes = 0
 ennemis_vaincus = 0
@@ -191,6 +191,10 @@ def arriver_case() -> None :
         reponse = reponse.lower()
         if (reponse == "oui") :
             ramasser_tresor(xPositionJoueur, yPositionJoueur)
+            pygame_min.afficher_jeu(murs, ennemis, tresors, position_joueur)
+        else:
+            reculer()
+            pygame_min.afficher_jeu(murs, ennemis, tresors, position_joueur)
         deplacement()
 
     else:
@@ -354,7 +358,7 @@ def detruire_mur ( x : int , y : int ) -> None :
         ( None )
         """
     global murs
-    #on enleve le mur donc les coordonées doivent etre egales à 0 .
+    #on enleve le mur aux coordonnées x,y, il faut donc mettre à 0
     murs[x][y] = 0
     print("vous avez detrui un mur !")
 
@@ -371,7 +375,10 @@ def ramasser_tresor ( x : int , y : int ) -> None :
         ( None )
         """
     global tresors_collectes
+    global tresors
     tresors_collectes += 1
+    #on enleve le trésor aux coordonnées x,y, il faut donc mettre à 0
+    tresors[x][y] = 0
     print("vous venez d'acquerir un nouveau tresor : Bravo! ")
     print("le nombre de tresors collectés jusqu'à présent est de :", tresors_collectes)
 
